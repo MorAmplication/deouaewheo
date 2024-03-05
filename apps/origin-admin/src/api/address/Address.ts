@@ -1,5 +1,3 @@
-import { Customer } from "../customer/Customer";
-
 export type Address = {
   id: string;
   createdAt: Date;
@@ -9,5 +7,4 @@ export type Address = {
   city: string | null;
   state: string | null;
   zip: number | null;
-  customers?: Array<Customer>;
 };

@@ -10,11 +10,7 @@ https://docs.amplication.com/how-to/custom-code
 ------------------------------------------------------------------------------
   */
 import { PrismaService } from "../../prisma/prisma.service";
-import {
-  Prisma,
-  Address as PrismaAddress,
-  Customer as PrismaCustomer,
-} from "@prisma/client";
+import { Prisma, Address as PrismaAddress } from "@prisma/client";
 
 export class AddressServiceBase {
   constructor(protected readonly prisma: PrismaService) {}
@@ -49,16 +45,5 @@ export class AddressServiceBase {
     args: Prisma.SelectSubset<T, Prisma.AddressDeleteArgs>
   ): Promise<PrismaAddress> {
     return this.prisma.address.delete(args);
-  }
-
-  async findCustomers(
-    parentId: string,
-    args: Prisma.CustomerFindManyArgs
-  ): Promise<PrismaCustomer[]> {
-    return this.prisma.address
-      .findUniqueOrThrow({
-        where: { id: parentId },
-      })
-      .customers(args);
   }
 }
