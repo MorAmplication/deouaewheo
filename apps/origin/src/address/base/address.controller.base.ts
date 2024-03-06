@@ -26,6 +26,7 @@ import { Address } from "./Address";
 import { AddressFindManyArgs } from "./AddressFindManyArgs";
 import { AddressWhereUniqueInput } from "./AddressWhereUniqueInput";
 import { AddressUpdateInput } from "./AddressUpdateInput";
+import { CreateAddressArgs } from "./CreateAddressArgs";
 
 @swagger.ApiBearerAuth()
 @common.UseGuards(defaultAuthGuard.DefaultAuthGuard, nestAccessControl.ACGuard)
@@ -219,7 +220,7 @@ export class AddressControllerBase {
   })
   async CreateOverride(
     @common.Body()
-    body: AddressCreateInput
+    body: CreateAddressArgs
   ): Promise<Address> {
     return this.service.CreateOverride(body);
   }

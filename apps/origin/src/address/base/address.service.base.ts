@@ -11,7 +11,7 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { PrismaService } from "../../prisma/prisma.service";
 import { Prisma, Address as PrismaAddress } from "@prisma/client";
-import { AddressCreateInput } from "./AddressCreateInput";
+import { CreateAddressArgs } from "./CreateAddressArgs";
 import { Address } from "./Address";
 
 export class AddressServiceBase {
@@ -48,7 +48,7 @@ export class AddressServiceBase {
   ): Promise<PrismaAddress> {
     return this.prisma.address.delete(args);
   }
-  async CreateOverride(args: AddressCreateInput): Promise<Address> {
+  async CreateOverride(args: CreateAddressArgs): Promise<Address> {
     throw new Error("Not implemented");
   }
 }
