@@ -26,6 +26,7 @@ import { AddressFindUniqueArgs } from "./AddressFindUniqueArgs";
 import { CreateAddressArgs } from "./CreateAddressArgs";
 import { UpdateAddressArgs } from "./UpdateAddressArgs";
 import { DeleteAddressArgs } from "./DeleteAddressArgs";
+import { AddressCreateInput } from "./AddressCreateInput";
 import { AddressService } from "../address.service";
 @common.UseGuards(GqlDefaultAuthGuard, gqlACGuard.GqlACGuard)
 @graphql.Resolver(() => Address)
@@ -140,5 +141,13 @@ export class AddressResolverBase {
       }
       throw error;
     }
+  }
+
+  @graphql.Mutation(() => Address)
+  async CreateOverride(
+    @graphql.Args()
+    args: AddressCreateInput
+  ): Promise<Address> {
+    return this.service.CreateOverride(args);
   }
 }

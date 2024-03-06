@@ -206,4 +206,21 @@ export class AddressControllerBase {
       throw error;
     }
   }
+
+  @common.Get("/:id/create-override")
+  @swagger.ApiOkResponse({
+    type: Address,
+  })
+  @swagger.ApiNotFoundResponse({
+    type: errors.NotFoundException,
+  })
+  @swagger.ApiForbiddenResponse({
+    type: errors.ForbiddenException,
+  })
+  async CreateOverride(
+    @common.Body()
+    body: AddressCreateInput
+  ): Promise<Address> {
+    return this.service.CreateOverride(body);
+  }
 }
