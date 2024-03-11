@@ -1,4 +1,7 @@
 import * as graphql from "@nestjs/graphql";
+import { MorCreateInput } from "../mor/base/MorCreateInput";
+import { MorCreateResults } from "../mor/base/MorCreateResults";
+import { MorService } from "./Mor.service";
 
 @graphql.Resolver(() => ENTITY)
 export class MorResolver {
