@@ -1,5 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { PrismaService } from "../prisma/prisma.service";
+import { MorCreateInput } from "../mor/base/MorCreateInput";
+import { MorCreateResults } from "../mor/base/MorCreateResults";
 
 @Injectable()
 export class MorService {
