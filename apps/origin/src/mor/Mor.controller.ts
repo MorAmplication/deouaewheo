@@ -3,10 +3,8 @@ import * as swagger from "@nestjs/swagger";
 
 @swagger.ApiTags("mors")
 @common.Controller("mors")
-export class MorController extends CONTROLLER_BASE {
-  constructor(protected readonly service: MorService) {
-    super(service);
-  }
+export class MorController {
+  constructor(protected readonly service: MorService) {}
 
   @common.Get("/:id/create")
   @swagger.ApiOkResponse({
