@@ -1,8 +1,8 @@
 import * as common from "@nestjs/common";
 import * as swagger from "@nestjs/swagger";
 import { MorService } from "./Mor.service";
-import { MorCreateInput } from "../mor/base/MorCreateInput";
-import { MorCreateResults } from "../mor/base/MorCreateResults";
+import { MorCreateInput } from "../mor/MorCreateInput";
+import { MorCreateResults } from "../mor/MorCreateResults";
 
 @swagger.ApiTags("mors")
 @common.Controller("mors")
