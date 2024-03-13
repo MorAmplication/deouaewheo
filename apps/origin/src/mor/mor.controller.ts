@@ -1,6 +1,6 @@
 import * as common from "@nestjs/common";
 import * as swagger from "@nestjs/swagger";
-import * as errors from "../../errors";
+import * as errors from "../errors";
 import { MorService } from "./mor.service";
 import { MorCreateInput } from "../mor/MorCreateInput";
 import { MorCreateResults } from "../mor/MorCreateResults";
