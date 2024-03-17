@@ -1,14 +1,16 @@
 import { ObjectType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
+import { Type } from "class-transformer";
 
 @ObjectType()
 class Customer {
-    @Field(() => enum)
+    @Field(() => String)
     @ApiProperty({
         required: true,
-        type: () => enum
+        type: () => String
     })
-    genderEnum!: enumName;
+    @Type(() => String)
+    vv!: string;
 }
 
 export { Customer as Customer };
